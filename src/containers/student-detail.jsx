@@ -98,31 +98,27 @@ const StudentDetails = () => {
                 />
               </div>
             )}
-            {detail.lastName && (
-              <div>
-                Last Name:
-                <input
-                  className="custom-input"
-                  type="text"
-                  defaultValue={detail.lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
-            )}
-            {detail.phoneNumber && (
-              <div>
-                Phone Number:
-                <input
-                  className="custom-input"
-                  type="text"
-                  defaultValue={detail.phoneNumber}
-                  onChange={(e) =>
-                    onChangePhoneNumber(e, setPhoneNumber, setPhoneNumberError)
-                  }
-                />
-                {phoneNumberError && 'You must enter minimum number length 10.'}
-              </div>
-            )}
+            <div>
+              Last Name:
+              <input
+                className="custom-input"
+                type="text"
+                defaultValue={detail.lastName || ''}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+            <div>
+              Phone Number:
+              <input
+                className="custom-input"
+                type="text"
+                defaultValue={detail.phoneNumber || ''}
+                onChange={(e) =>
+                  onChangePhoneNumber(e, setPhoneNumber, setPhoneNumberError)
+                }
+              />
+              {phoneNumberError && 'You must enter minimum number length 10.'}
+            </div>
 
             <div>
               Description :
@@ -134,12 +130,12 @@ const StudentDetails = () => {
               />
             </div>
             <div className="select-wrapper">
-              {detail.cityName && cities.length > 0 && (
+              {cities.length > 0 && (
                 <div>
                   City :
                   <select
                     className="custom-input"
-                    defaultValue={detail.cityKey}
+                    defaultValue={detail.cityKey || ''}
                     onChange={(e) => {
                       setCurrentCityId(e.target.value);
                       setCurrentDistrictId('');
@@ -156,12 +152,12 @@ const StudentDetails = () => {
                 </div>
               )}
 
-              {districties?.length > 0 && detail.districtName && (
+              {districties?.length > 0 && (
                 <div>
                   District :
                   <select
                     className="custom-input"
-                    defaultValue={detail.districtKey}
+                    defaultValue={detail.districtKey || ''}
                     onChange={(e) => setCurrentDistrictId(e.target.value)}>
                     <option value="">Select District</option>
                     {districties.map((district) => (
@@ -177,7 +173,7 @@ const StudentDetails = () => {
             </div>
             <div>
               <div className="custom-button" onClick={onSubmit}>
-                submit
+                Update
               </div>
             </div>
           </div>
