@@ -1,0 +1,28 @@
+.custom-input {
+  height: 30px;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid #cecece !important;
+  padding: 0 8px;
+}
+
+.custom-button {
+  background-color: cornflowerblue;
+  color: #fff;
+  padding: 8px;
+  width: 100px !important;
+  text-align: center;
+  font-weight: bold;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-wrapper select {
+  margin-right: 12px;
+}
